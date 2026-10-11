@@ -1,6 +1,6 @@
 # Boot report: modified OS 1.73 on the Analog Rytm MKII
 
-This report records one build of [rytm-mods-src](https://github.com/ConnorWay32/rytm-mods-src) being flashed to a real Analog Rytm MKII, booted, and then recovered with Elektron's stock OS. It provides evidence for step 3, "Modified OS boots", of Modwerk's [Add a machine](https://github.com/repeat98/modwerk/blob/main/docs/ADD_A_MACHINE.md) process.
+This report records one build of [rytm-mods-src](https://github.com/ConnorWay32/rytm-mods-src): Elektron's stock OS 1.73 file rebuilt byte for byte, then a modified build flashed to a real Analog Rytm MKII, booted, and recovered with the stock OS. It provides evidence for steps 2, "Stock file rebuilt exactly", and 3, "Modified OS boots", of Modwerk's [Add a machine](https://github.com/repeat98/modwerk/blob/main/docs/ADD_A_MACHINE.md) process, on OS 1.73.
 
 No firmware is included in this repository: not the stock OS, the built `.syx`, any extracted section, or any disassembly. Only hashes, sizes, addresses and observations are recorded.
 
@@ -41,6 +41,18 @@ The build tree (`~/rytm-mods-src` under WSL) was a local copy rather than a clon
 | Stock MAIN OS section | 3,005,432 B, SHA-256 `28d9ef40c895e03f17dfce096543109adaf708947392db72818fc2a412d685d6` |
 | Stock bootstrap section | 42,302 B, SHA-256 `1b8d3b7288df118512740ac7c59d8dd9f71f44e6633a29628bcb068d756e2ed8`, matching the hash pinned in the source's `docs/HAZARDS.md` |
 
+### Stock rebuild
+
+Before applying any mods, the build unpacks the stock `.syx` and repacks it unchanged with elektron-firmware-tool (the "null repack"), writing `build/null_repack.syx`.
+
+| | |
+|---|---|
+| Null repack file | `build/null_repack.syx`, 1,880,224 B |
+| Null repack SHA-256 | `8ad671087ec30433d5407c7380d2396e0915ab931c5d3dd18a78bf284d3d1e52` |
+| Stock SHA-256 | `8ad671087ec30433d5407c7380d2396e0915ab931c5d3dd18a78bf284d3d1e52` |
+
+The hashes match: the tool rebuilt Elektron's OS 1.73 file byte for byte from its own unpacked contents, including the SysEx encoding and the recompressed MAIN OS. Anyone with the stock file can check the hash against their own download.
+
 ### Output
 
 | | |
@@ -73,7 +85,7 @@ All twelve mods in the default build were included. The status column is the sou
 
 `make verify` ended in `PASS`. The log is in [`verify_output_redacted.txt`](verify_output_redacted.txt). It is the complete output with one change: wherever the log printed stock Elektron bytes, they are replaced with `<stock>`. That covers 60 `displaced` lines (the stock instructions each detour replaced) and 68 build `patch` lines (the value before each patch). Every address, claim name, new value, `ok` result and the final `PASS` are unchanged. It confirms that:
 
-- **The container tool is faithful.** The untouched stock `.syx` rebuilds byte for byte (null repack).
+- **The container tool is faithful.** The untouched stock `.syx` rebuilds byte for byte (null repack; hashes above).
 - **The recovery path is intact.** The bootstrap section is unchanged (42,302 B), so the STARTUP menu's DIN-MIDI OS UPGRADE still works.
 - **Only MAIN OS changed.** The FPGA (149,516 B), meta (15 B) and section 8 (159,948 B) sections are unchanged, and MAIN OS keeps its stock size and round-trips byte-identically out of the built `.syx`.
 - **Every change was intended.** All 101 regions that differ from stock lie inside claims in the source's `registry/allocations.toml`.
@@ -117,11 +129,26 @@ The unit accepted the stock file, restarted and booted normally. On the same FIL
 
 The two FILTER photos were taken at different cutoff settings (fully open in section 2, `67` here). The point of comparison is the display format: Hz with the modified OS, a plain parameter value with stock.
 
-Recovery was done through the normal USB route, because the modified OS booted and could accept an update itself. The STARTUP menu route over DIN MIDI ([FUNC] at power-on, then [TRIG 4]), which recovers a unit whose MAIN OS does not boot, was not exercised. Section 1 shows the bootstrap that serves it was left unchanged.
+Recovery was done through the normal USB route, because the modified OS booted and could accept an update itself. The STARTUP menu route over DIN MIDI ([FUNC] at power-on, then [TRIG 4]), which recovers a unit whose MAIN OS does not boot, was not exercised with the modified build. Section 1 shows the bootstrap that serves it was left unchanged, and section 5 records that route working with the stock file on the same unit.
 
 ## 4. Result
 
+- **Stock file rebuilt exactly.** elektron-firmware-tool unpacked and repacked Elektron's OS 1.73 `.syx` into a file with the same SHA-256 as the original (section 1, Stock rebuild).
 - **Modified OS boots.** The build from rytm-mods-src commit `cf5ac006` was flashed to a real Analog Rytm MKII, booted to normal operation, and ran a modification (0008-filter-hz) that stock OS 1.73 does not have.
 - **The stock file recovers it.** Flashing Elektron's unmodified OS 1.73 file returned the unit to stock behaviour.
 
-This is the evidence for step 3, "Modified OS boots", of Modwerk's Add a machine process. It covers OS 1.73 only. It is one flash on one unit, with one mod checked visually; it does not qualify the other mods in the build, and it does not change their status labels in the source repository.
+This is the evidence for steps 2 and 3 of Modwerk's Add a machine process. It covers OS 1.73 only. It is one flash on one unit, with one mod checked visually; it does not qualify the other mods in the build, and it does not change their status labels in the source repository.
+
+## 5. Other observations: moving from OS 1.74 to 1.73
+
+Separately from the build above, the same unit was moved from stock OS 1.74 to stock OS 1.73 on 2026-10-11 by both update routes. Both used Elektron's stock `Analog-Rytm_MKII_OS1.73.syx`, SHA-256 `8ad671087ec30433d5407c7380d2396e0915ab931c5d3dd18a78bf284d3d1e52`.
+
+| Route | How | Result |
+|---|---|---|
+| Normal update | Elektron Transfer 1.10.3 over USB | Accepted; the unit booted OS 1.73 |
+| Recovery | STARTUP menu ([FUNC] at power-on, then [TRIG 4] for OS UPGRADE), file sent from Transfer's SysEx Transfer Recovery Mode over MIDI DIN through a CME U2MIDI Pro interface | Accepted; the unit booted OS 1.73 |
+
+Two things follow from this:
+
+- **Units on 1.74 can install a 1.73-based build.** Earlier static analysis (the bootstrap's "DOWNGRADE NOT POSSIBLE" message, and the source's `docs/FLASHING.md`) suggested a unit could not go back from 1.74 to 1.73. On this unit it can, by either route. 1.73 and 1.74 carry the same bootstrap, so whatever that check compares, this move does not trigger it.
+- **The DIN recovery route works on this unit.** It accepted and installed a full OS over MIDI DIN from the STARTUP menu, which is the path for recovering a unit whose MAIN OS does not boot. It was exercised here with the stock file rather than to recover from a failed modified build.
