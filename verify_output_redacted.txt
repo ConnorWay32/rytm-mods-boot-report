@@ -1,0 +1,702 @@
+Makefile:70: warning: overriding recipe for target 'build-selftest'
+Makefile:65: warning: ignoring old recipe for target 'build-selftest'
+.venv/bin/python tools/symbols.py
+symbols.inc: 275 symbols; ApplySymbols.java: 257 symbols
+.venv/bin/python tools/layout.py
+layout ok
+.venv/bin/python tools/comp/calib_tables.py --check
+atkscale: generated from [ballistics] coupling
+calib.inc matches calibration.toml: PASS
+.venv/bin/python tools/build.py
+built build/Analog-Rytm_MKII_OS1.73_0000_0002_0003_0004_0006_0008_0009_0010_0012_0013_0014_0015.syx (1,799,712 B)
+  MIDI upgrade (Transfer, or STARTUP menu TRIG 4) -> Analog-Rytm_MKII_OS1.73_0000_0002_0003_0004_0006_0008_0009_0010_0012_0013_0014_0015.syx
+  0000-shared: stub 0x402ccebc (234 B) [built]
+  0002-euclid-accents: stub 0x402cc920 (1434 B) [hardware-verified]
+      params diag_get=0 diag_icons=0 phase=2 probe_range=0
+      detour 0x4009ab72 -> trig_fire_accent @ 0x402cc9e8
+      detour 0x400c3c0e -> euclid_bake_gate @ 0x402cca20
+      detour 0x400c0e02 -> euclid_enabled_get_masked @ 0x402ccaf0
+      detour 0x400c0e32 -> euclid_enabled_set_keep @ 0x402ccb0e
+      detour 0x400378a6 -> param_delta_gate @ 0x402cce10
+      detour 0x400a85e0 -> boolop_text_gate @ 0x402cce72
+      detour 0x40008f62 -> pattern_save_accent @ 0x402ccb5e
+      detour 0x40008cc4 -> pattern_load_accent @ 0x402ccb7c
+      detour 0x4009aaca -> trig_fire_euclid_masked @ 0x402ccb9a
+  0003-velocity-humanise: stub 0x402cdddc (438 B) [built]
+      params diag_canary=0
+      detour 0x4009afa0 -> vel_humanise @ 0x402cdddc
+      detour 0x400378ae -> vel_amount_gate @ 0x402cde6e
+      detour 0x400a85e8 -> vel_text_gate @ 0x402cdef2
+      detour 0x400a8f98 -> vel_label_gate @ 0x402cdf62
+  0004-lfo-rnd: stub 0x402cd8a0 (1337 B) [built]
+      params dest_list=1 phase=2
+      detour 0x400ff574 -> page_info_gate @ 0x402cd8a0
+      detour 0x40038462 -> get_gate @ 0x402cd94c
+      detour 0x400378b6 -> delta_gate @ 0x402cd97c
+      detour 0x400a85f0 -> text_gate @ 0x402cd9dc
+      detour 0x400a857c -> knob_draw_gate @ 0x402cda72
+      detour 0x4004aec6 -> list_filter_gate @ 0x402cdb72
+      detour 0x4003a5f2 -> knob_cidx_gate @ 0x40029808
+      detour 0x40039d32 -> list_same_gate @ 0x402cdbde
+      detour 0x40039d9a -> list_new_gate @ 0x40029822
+      detour 0x400a8dfa -> read_gate @ 0x402cdb00
+      detour 0x400a9000 -> setter_gate @ 0x402cdb22
+      detour 0x4003ab94 -> title_after_cycle @ 0x402cd8bc
+      detour 0x4009b000 -> trig_cfg_gate @ 0x402cdbfa
+      detour 0x40120fae -> audio_gate @ 0x402cdc40
+  0004-lfo-rnd: stub 0x40029808 (46 B) [built]
+      params dest_list=1 phase=2
+      detour 0x400ff574 -> page_info_gate @ 0x402cd8a0
+      detour 0x40038462 -> get_gate @ 0x402cd94c
+      detour 0x400378b6 -> delta_gate @ 0x402cd97c
+      detour 0x400a85f0 -> text_gate @ 0x402cd9dc
+      detour 0x400a857c -> knob_draw_gate @ 0x402cda72
+      detour 0x4004aec6 -> list_filter_gate @ 0x402cdb72
+      detour 0x4003a5f2 -> knob_cidx_gate @ 0x40029808
+      detour 0x40039d32 -> list_same_gate @ 0x402cdbde
+      detour 0x40039d9a -> list_new_gate @ 0x40029822
+      detour 0x400a8dfa -> read_gate @ 0x402cdb00
+      detour 0x400a9000 -> setter_gate @ 0x402cdb22
+      detour 0x4003ab94 -> title_after_cycle @ 0x402cd8bc
+      detour 0x4009b000 -> trig_cfg_gate @ 0x402cdbfa
+      detour 0x40120fae -> audio_gate @ 0x402cdc40
+  0006-comp-preview: stub 0x40029060 (1900 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x402cdf94 (88 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x402ccfa8 (80 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x4002871c (224 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x400287fc (524 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x401ba290 (240 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x40289ab8 (128 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0006-comp-preview: stub 0x40289b38 (768 B) [hardware-verified]
+      params cal=0 noest=0 prof=0 telem=0
+      detour 0x401213a0 -> comp_probe @ 0x40029060
+  0008-filter-hz: stub 0x401ba390 (256 B) [hardware-verified]
+      detour 0x400a8648 -> filter_hz_gate @ 0x401ba390
+  0009-main-rms: stub 0x40137a48 (262 B) [built]
+      params rms_db=-18
+      detour 0x4012135e -> rms_scan @ 0x40137a48
+  0010-kit-ab: stub 0x40137b50 (274 B) [hardware-verified]
+  0010-kit-ab: stub 0x401ba490 (70 B) [hardware-verified]
+  0012-slice-loop: stub 0x40012a9e (752 B) [hardware-verified]
+      detour 0x400f9e96 -> slice_menu_add @ 0x40012aa0
+  0013-voice-dac: stub 0x4001976a (3298 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0013-voice-dac: stub 0x40026dfc (1176 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0013-voice-dac: stub 0x400b1ab4 (1792 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0013-voice-dac: stub 0x401b9a72 (996 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0013-voice-dac: stub 0x400bb15c (740 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0013-voice-dac: stub 0x400279c4 (2968 B) [hardware-verified]
+      params burn=0 dbg=0 dial=1 k=11190 prof=0 snap=4 timing=0
+      detour 0x401212b6 -> route_all @ 0x4001976c
+      detour 0x40121364 -> vs_main @ 0x40019780
+      detour 0x4011fde2 -> vs_alt @ 0x40019792
+      detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+      detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+      detour 0x4003846a -> hpf_get @ 0x400279c4
+      detour 0x400378bc -> hpf_delta @ 0x40027a20
+      detour 0x400a85f8 -> hpf_text @ 0x40027b00
+      detour 0x400a8584 -> flt_glyph @ 0x40027c44
+      detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+      detour 0x40008492 -> hpf_save @ 0x40019e16
+      detour 0x4000826a -> hpf_load @ 0x40019e64
+      detour 0x400081f6 -> snd_load @ 0x40019eba
+      detour 0x400122d0 -> snd_init @ 0x40019eee
+      detour 0x40008364 -> rte_rload @ 0x4002818e
+      detour 0x4011f63c -> rte_pushv @ 0x400281aa
+      detour 0x4011f660 -> rte_pusha @ 0x400281be
+      detour 0x40033a90 -> rte_get_at @ 0x400281d2
+      detour 0x40033a1c -> rte_set_at @ 0x400281e8
+      detour 0x4003391e -> rte_setrte_at @ 0x40028208
+      detour 0x400c52ba -> rte_get_vel @ 0x40028216
+      detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+      detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+      detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+      detour 0x40007660 -> dac_load @ 0x40019f8c
+      detour 0x40007bb0 -> dac_save @ 0x40019fd0
+      detour 0x400d901c -> dac_menu_add @ 0x4001a100
+  0014-ctrl-all: stub 0x40029838 (170 B) [hardware-verified]
+      detour 0x400378c2 -> ctrl_all_gate @ 0x40029838
+  0015-env-reset-amp: stub 0x400298e4 (50 B) [hardware-verified]
+      params bit_probe=0
+      detour 0x40109b04 -> amp_attack @ 0x400298e4
+  0002-euclid-accents: patch 0x400a884e <stock> -> 402cc93c
+  0002-euclid-accents: patch 0x400a9cac <stock> -> 402cc970
+  0002-euclid-accents: patch 0x400ff476 <stock> -> 7207
+  0002-euclid-accents: patch 0x400ff492 <stock> -> 7007
+  0002-euclid-accents: patch 0x40143126 <stock> -> 402ccd9e
+  0002-euclid-accents: patch 0x400ff3e0 <stock> -> 7207
+  0002-euclid-accents: patch 0x400ff3ea <stock> -> 7007
+  0002-euclid-accents: patch 0x400ff3f6 <stock> -> 402cc9b4
+  0003-velocity-humanise: patch 0x400a87b8 <stock> -> 402cdeca
+  0004-lfo-rnd: patch 0x400cb02a <stock> -> 7202
+  0004-lfo-rnd: patch 0x400cb030 <stock> -> 402cdcfc
+  0004-lfo-rnd: patch 0x401bf970 <stock> -> 00010000
+  0004-lfo-rnd: patch 0x401bf9d8 <stock> -> 00010000
+  0004-lfo-rnd: patch 0x401bf950 <stock> -> 00000000
+  0004-lfo-rnd: patch 0x401bf958 <stock> -> 00007f00
+  0004-lfo-rnd: patch 0x401bf974 <stock> -> 402cdd87
+  0004-lfo-rnd: patch 0x401bf978 <stock> -> 402cddc1
+  0004-lfo-rnd: patch 0x401bf97c <stock> -> 402cddc9
+  0004-lfo-rnd: patch 0x401bf984 <stock> -> 00000000
+  0004-lfo-rnd: patch 0x401bf98c <stock> -> 00007f00
+  0004-lfo-rnd: patch 0x401bf9a8 <stock> -> 402cdd95
+  0004-lfo-rnd: patch 0x401bf9ac <stock> -> 402cddc1
+  0004-lfo-rnd: patch 0x401bf9b0 <stock> -> 402cddcd
+  0004-lfo-rnd: patch 0x401bf9b8 <stock> -> 00000000
+  0004-lfo-rnd: patch 0x401bf9c0 <stock> -> 00007f00
+  0004-lfo-rnd: patch 0x401bf9dc <stock> -> 402cdda4
+  0004-lfo-rnd: patch 0x401bf9e0 <stock> -> 402cddc1
+  0004-lfo-rnd: patch 0x401bf9e4 <stock> -> 402cddd1
+  0004-lfo-rnd: patch 0x401bf9ec <stock> -> 00000000
+  0004-lfo-rnd: patch 0x401bf9f4 <stock> -> 00007f00
+  0004-lfo-rnd: patch 0x401bfa10 <stock> -> 402cddb2
+  0004-lfo-rnd: patch 0x401bfa14 <stock> -> 402cddc1
+  0004-lfo-rnd: patch 0x401bfa18 <stock> -> 402cddd5
+  0006-comp-preview: patch 0x400cb182 <stock> -> 7202
+  0006-comp-preview: patch 0x400cb188 <stock> -> 402cdfc4
+  0006-comp-preview: patch 0x401e11b8 <stock> -> 40029556
+  0006-comp-preview: patch 0x401e11b0 <stock> -> 400296c6
+  0006-comp-preview: patch 0x401e1208 <stock> -> 40029770
+  0009-main-rms: patch 0x401e123c <stock> -> 40137ae4
+  0009-main-rms: patch 0x401e1240 <stock> -> 40137aec
+  0010-kit-ab: patch 0x400dd5e0 <stock> -> 40137b50
+  0010-kit-ab: patch 0x400dd5e8 <stock> -> 401ba49c
+  0010-kit-ab: patch 0x400cd4b0 <stock> -> 40137b50
+  0010-kit-ab: patch 0x400cd4d8 <stock> -> 401ba49c
+  0013-voice-dac: patch 0x400caf82 <stock> -> 7202
+  0013-voice-dac: patch 0x400caf88 <stock> -> 40019c78
+  0013-voice-dac: patch 0x401bfa28 <stock> -> 00007f00
+  0013-voice-dac: patch 0x401bfa44 <stock> -> 4001a079
+  0013-voice-dac: patch 0x401bfa4c <stock> -> 4001a083
+  0013-voice-dac: patch 0x401bfb60 <stock> -> 00000700
+  0013-voice-dac: patch 0x401bfb7c <stock> -> 4001a087
+  0013-voice-dac: patch 0x401bfb84 <stock> -> 4001a093
+  0013-voice-dac: patch 0x401bfb94 <stock> -> 00007f00
+  0013-voice-dac: patch 0x401bfbb0 <stock> -> 4001a097
+  0013-voice-dac: patch 0x401bfbb8 <stock> -> 4001a09d
+  0013-voice-dac: patch 0x401bfbc8 <stock> -> 00007f00
+  0013-voice-dac: patch 0x401bfbe4 <stock> -> 4001a0a1
+  0013-voice-dac: patch 0x401bfbec <stock> -> 4001a0ab
+  0013-voice-dac: patch 0x401bfa90 <stock> -> 00007f00
+  0013-voice-dac: patch 0x401bfaac <stock> -> 4001a0af
+  0013-voice-dac: patch 0x401bfab4 <stock> -> 4001a0c0
+  0013-voice-dac: patch 0x401bfbfc <stock> -> 00007f00
+  0013-voice-dac: patch 0x401bfc18 <stock> -> 4001a0c4
+  0013-voice-dac: patch 0x401bfc20 <stock> -> 4001a0d6
+  0013-voice-dac: patch 0x401c5614 <stock> -> 4001a0da
+  0013-voice-dac: patch 0x401c561c <stock> -> 4001a0e3
+  0015-env-reset-amp: patch 0x400ef86a <stock> -> 4e71
+  0015-env-reset-amp: patch 0x400bcf1e <stock> -> 7403
+  MAIN OS 3005432 B, sha256 5220313c7379879b...
+.venv/bin/python tools/verify.py
+ok   null repack: stock .syx rebuilds byte-identically
+ok   size unchanged (3005432 B)
+ok   Analog-Rytm_MKII_OS1.73_0000_0002_0003_0004_0006_0008_0009_0010_0012_0013_0014_0015.syx round-trips to a byte-identical MAIN OS
+ok   bootstrap unchanged (42302 B) - recovery path intact
+ok   section_1_FPGA.bin unchanged (149,516 B)
+ok   section_5_meta.raw unchanged (15 B)
+ok   section_8_?.bin unchanged (159,948 B)
+     101 differing region(s):
+ok     0x40007660 +6    detour/0013-voice-dac
+ok     0x40007bb0 +6    detour/0013-voice-dac
+ok     0x400081f6 +6    detour/0013-voice-dac
+ok     0x4000826a +6    detour/0013-voice-dac
+ok     0x40008364 +6    detour/0013-voice-dac
+ok     0x40008492 +6    detour/0013-voice-dac
+ok     0x40008cc4 +6    detour/0002-euclid-accents
+ok     0x40008f62 +6    detour/0002-euclid-accents
+ok     0x400122d0 +6    detour/0013-voice-dac
+ok     0x40012a9e +752  cave/0012-slice-loop
+ok     0x4001976b +3297 cave/0013-voice-dac
+ok     0x40026dfc +1176 cave/0013-voice-dac
+ok     0x400279c4 +2968 cave/0013-voice-dac
+ok     0x4002871c +748  cave/0006-comp-preview
+ok     0x40029060 +1900 cave/0006-comp-preview
+ok     0x40029808 +270  cave/0004-lfo-rnd, cave/0014-ctrl-all, cave/0015-env-reset-amp
+ok     0x4003391e +6    detour/0013-voice-dac
+ok     0x40033a1c +6    detour/0013-voice-dac
+ok     0x40033a90 +6    detour/0013-voice-dac
+ok     0x400378a6 +34   detour/0002-euclid-accents, detour/0003-velocity-humanise, detour/0004-lfo-rnd, detour/0013-voice-dac, detour/0014-ctrl-all
+ok     0x40038462 +14   detour/0004-lfo-rnd, detour/0013-voice-dac
+ok     0x40039d33 +5    detour/0004-lfo-rnd
+ok     0x40039d9b +5    detour/0004-lfo-rnd
+ok     0x4003a5f3 +5    detour/0004-lfo-rnd
+ok     0x4003ab86 +20   detour/0013-voice-dac, detour/0004-lfo-rnd
+ok     0x4004aec7 +5    detour/0004-lfo-rnd
+ok     0x4009aaca +6    detour/0002-euclid-accents
+ok     0x4009ab72 +6    detour/0002-euclid-accents
+ok     0x4009afa0 +6    detour/0003-velocity-humanise
+ok     0x4009b000 +6    detour/0004-lfo-rnd
+ok     0x400a2aae +6    detour/0013-voice-dac
+ok     0x400a857c +14   detour/0004-lfo-rnd, detour/0013-voice-dac
+ok     0x400a85e0 +30   detour/0002-euclid-accents, detour/0003-velocity-humanise, detour/0004-lfo-rnd, detour/0013-voice-dac
+ok     0x400a8648 +6    detour/0008-filter-hz
+ok     0x400a87b9 +3    patch/0003-velocity-humanise
+ok     0x400a884f +3    patch/0002-euclid-accents
+ok     0x400a8dfa +6    detour/0004-lfo-rnd
+ok     0x400a8f98 +6    detour/0003-velocity-humanise
+ok     0x400a9000 +6    detour/0004-lfo-rnd
+ok     0x400a9cad +3    patch/0002-euclid-accents
+ok     0x400b1ab4 +1792 cave/0013-voice-dac
+ok     0x400bb15c +740  cave/0013-voice-dac
+ok     0x400bcf1f +1    patch/0015-env-reset-amp
+ok     0x400c0e02 +6    detour/0002-euclid-accents
+ok     0x400c0e32 +6    detour/0002-euclid-accents
+ok     0x400c3c0e +6    detour/0002-euclid-accents
+ok     0x400c5148 +6    detour/0013-voice-dac
+ok     0x400c5246 +6    detour/0013-voice-dac
+ok     0x400c52ba +6    detour/0013-voice-dac
+ok     0x400caf83 +9    patch/0013-voice-dac
+ok     0x400cb02b +9    patch/0004-lfo-rnd
+ok     0x400cb183 +9    patch/0006-comp-preview
+ok     0x400cd4b1 +3    patch/0010-kit-ab
+ok     0x400cd4d9 +3    patch/0010-kit-ab
+ok     0x400d2e42 +6    detour/0013-voice-dac
+ok     0x400d901c +6    detour/0013-voice-dac
+ok     0x400dd5e1 +11   patch/0010-kit-ab
+ok     0x400ef86a +2    patch/0015-env-reset-amp
+ok     0x400f9e96 +6    detour/0012-slice-loop
+ok     0x400ff3e1 +25   patch/0002-euclid-accents
+ok     0x400ff477 +1    patch/0002-euclid-accents
+ok     0x400ff493 +1    patch/0002-euclid-accents
+ok     0x400ff574 +6    detour/0004-lfo-rnd
+ok     0x400ff592 +6    detour/0013-voice-dac
+ok     0x40109b04 +6    detour/0015-env-reset-amp
+ok     0x4011f63c +6    detour/0013-voice-dac
+ok     0x4011f660 +6    detour/0013-voice-dac
+ok     0x4011fde3 +5    detour/0013-voice-dac
+ok     0x40120faf +5    detour/0004-lfo-rnd
+ok     0x401212b6 +6    detour/0013-voice-dac
+ok     0x4012135f +11   detour/0009-main-rms, detour/0013-voice-dac
+ok     0x401213a0 +6    detour/0006-comp-preview
+ok     0x40137a48 +538  cave/0009-main-rms, cave/0010-kit-ab
+ok     0x40143127 +3    patch/0002-euclid-accents
+ok     0x401b9a72 +995  cave/0013-voice-dac
+ok     0x401ba290 +240  cave/0006-comp-preview
+ok     0x401ba390 +326  cave/0006-comp-preview
+ok     0x401bf950 +11   patch/0004-lfo-rnd
+ok     0x401bf971 +30   patch/0004-lfo-rnd
+ok     0x401bf9a9 +26   patch/0004-lfo-rnd
+ok     0x401bf9d9 +30   patch/0004-lfo-rnd
+ok     0x401bfa11 +26   patch/0004-lfo-rnd, patch/0013-voice-dac
+ok     0x401bfa45 +11   patch/0013-voice-dac
+ok     0x401bfa92 +1    patch/0013-voice-dac
+ok     0x401bfaad +11   patch/0013-voice-dac
+ok     0x401bfb62 +1    patch/0013-voice-dac
+ok     0x401bfb7d +26   patch/0013-voice-dac
+ok     0x401bfbb1 +26   patch/0013-voice-dac
+ok     0x401bfbe5 +26   patch/0013-voice-dac
+ok     0x401bfc19 +11   patch/0013-voice-dac
+ok     0x401c5615 +11   patch/0013-voice-dac
+ok     0x401e11b1 +11   patch/0006-comp-preview
+ok     0x401e1209 +3    patch/0006-comp-preview
+ok     0x401e123d +7    patch/0009-main-rms
+ok     0x40289b38 +340  cave/0006-comp-preview
+ok     0x40289ca8 +400  cave/0006-comp-preview
+ok     0x402cc920 +924  cave/0002-euclid-accents
+ok     0x402ccd9e +520  cave/0002-euclid-accents, cave/0000-shared
+ok     0x402cd8a0 +1180 cave/0004-lfo-rnd
+ok     0x402cdd84 +525  cave/0004-lfo-rnd, cave/0003-velocity-humanise
+ok     0x402cdfb8 +52   cave/0003-velocity-humanise, cave/0006-comp-preview
+ok   patch 0x400a884e holds 402cc93c
+ok   patch 0x400a9cac holds 402cc970
+ok   patch 0x400ff476 holds 7207
+ok   patch 0x400ff492 holds 7007
+ok   patch 0x40143126 holds 402ccd9e
+ok   patch 0x400ff3e0 holds 7207
+ok   patch 0x400ff3ea holds 7007
+ok   patch 0x400ff3f6 holds 402cc9b4
+ok   patch 0x400a87b8 holds 402cdeca
+ok   patch 0x400cb02a holds 7202
+ok   patch 0x400cb030 holds 402cdcfc
+ok   patch 0x401bf970 holds 00010000
+ok   patch 0x401bf9d8 holds 00010000
+ok   patch 0x401bf950 holds 00000000
+ok   patch 0x401bf958 holds 00007f00
+ok   patch 0x401bf974 holds 402cdd87
+ok   patch 0x401bf978 holds 402cddc1
+ok   patch 0x401bf97c holds 402cddc9
+ok   patch 0x401bf984 holds 00000000
+ok   patch 0x401bf98c holds 00007f00
+ok   patch 0x401bf9a8 holds 402cdd95
+ok   patch 0x401bf9ac holds 402cddc1
+ok   patch 0x401bf9b0 holds 402cddcd
+ok   patch 0x401bf9b8 holds 00000000
+ok   patch 0x401bf9c0 holds 00007f00
+ok   patch 0x401bf9dc holds 402cdda4
+ok   patch 0x401bf9e0 holds 402cddc1
+ok   patch 0x401bf9e4 holds 402cddd1
+ok   patch 0x401bf9ec holds 00000000
+ok   patch 0x401bf9f4 holds 00007f00
+ok   patch 0x401bfa10 holds 402cddb2
+ok   patch 0x401bfa14 holds 402cddc1
+ok   patch 0x401bfa18 holds 402cddd5
+ok   patch 0x400cb182 holds 7202
+ok   patch 0x400cb188 holds 402cdfc4
+ok   patch 0x401e11b8 holds 40029556
+ok   patch 0x401e11b0 holds 400296c6
+ok   patch 0x401e1208 holds 40029770
+ok   patch 0x401e123c holds 40137ae4
+ok   patch 0x401e1240 holds 40137aec
+ok   patch 0x400dd5e0 holds 40137b50
+ok   patch 0x400dd5e8 holds 401ba49c
+ok   patch 0x400cd4b0 holds 40137b50
+ok   patch 0x400cd4d8 holds 401ba49c
+ok   patch 0x400caf82 holds 7202
+ok   patch 0x400caf88 holds 40019c78
+ok   patch 0x401bfa28 holds 00007f00
+ok   patch 0x401bfa44 holds 4001a079
+ok   patch 0x401bfa4c holds 4001a083
+ok   patch 0x401bfb60 holds 00000700
+ok   patch 0x401bfb7c holds 4001a087
+ok   patch 0x401bfb84 holds 4001a093
+ok   patch 0x401bfb94 holds 00007f00
+ok   patch 0x401bfbb0 holds 4001a097
+ok   patch 0x401bfbb8 holds 4001a09d
+ok   patch 0x401bfbc8 holds 00007f00
+ok   patch 0x401bfbe4 holds 4001a0a1
+ok   patch 0x401bfbec holds 4001a0ab
+ok   patch 0x401bfa90 holds 00007f00
+ok   patch 0x401bfaac holds 4001a0af
+ok   patch 0x401bfab4 holds 4001a0c0
+ok   patch 0x401bfbfc holds 00007f00
+ok   patch 0x401bfc18 holds 4001a0c4
+ok   patch 0x401bfc20 holds 4001a0d6
+ok   patch 0x401c5614 holds 4001a0da
+ok   patch 0x401c561c holds 4001a0e3
+ok   patch 0x400ef86a holds 4e71
+ok   patch 0x400bcf1e holds 7403
+ok   detour 0x4009ab72 -> trig_fire_accent @ 0x402cc9e8
+ok   detour 0x400c3c0e -> euclid_bake_gate @ 0x402cca20
+ok   detour 0x400c0e02 -> euclid_enabled_get_masked @ 0x402ccaf0
+ok   detour 0x400c0e32 -> euclid_enabled_set_keep @ 0x402ccb0e
+ok   detour 0x400378a6 -> param_delta_gate @ 0x402cce10
+ok   detour 0x400a85e0 -> boolop_text_gate @ 0x402cce72
+ok   detour 0x40008f62 -> pattern_save_accent @ 0x402ccb5e
+ok   detour 0x40008cc4 -> pattern_load_accent @ 0x402ccb7c
+ok   detour 0x4009aaca -> trig_fire_euclid_masked @ 0x402ccb9a
+ok   detour 0x4009afa0 -> vel_humanise @ 0x402cdddc
+ok   detour 0x400378ae -> vel_amount_gate @ 0x402cde6e
+ok   detour 0x400a85e8 -> vel_text_gate @ 0x402cdef2
+ok   detour 0x400a8f98 -> vel_label_gate @ 0x402cdf62
+ok   detour 0x400ff574 -> page_info_gate @ 0x402cd8a0
+ok   detour 0x40038462 -> get_gate @ 0x402cd94c
+ok   detour 0x400378b6 -> delta_gate @ 0x402cd97c
+ok   detour 0x400a85f0 -> text_gate @ 0x402cd9dc
+ok   detour 0x400a857c -> knob_draw_gate @ 0x402cda72
+ok   detour 0x4004aec6 -> list_filter_gate @ 0x402cdb72
+ok   detour 0x4003a5f2 -> knob_cidx_gate @ 0x40029808
+ok   detour 0x40039d32 -> list_same_gate @ 0x402cdbde
+ok   detour 0x40039d9a -> list_new_gate @ 0x40029822
+ok   detour 0x400a8dfa -> read_gate @ 0x402cdb00
+ok   detour 0x400a9000 -> setter_gate @ 0x402cdb22
+ok   detour 0x4003ab94 -> title_after_cycle @ 0x402cd8bc
+ok   detour 0x4009b000 -> trig_cfg_gate @ 0x402cdbfa
+ok   detour 0x40120fae -> audio_gate @ 0x402cdc40
+ok   detour 0x401213a0 -> comp_probe @ 0x40029060
+ok   detour 0x400a8648 -> filter_hz_gate @ 0x401ba390
+ok   detour 0x4012135e -> rms_scan @ 0x40137a48
+ok   detour 0x400f9e96 -> slice_menu_add @ 0x40012aa0
+ok   detour 0x401212b6 -> route_all @ 0x4001976c
+ok   detour 0x40121364 -> vs_main @ 0x40019780
+ok   detour 0x4011fde2 -> vs_alt @ 0x40019792
+ok   detour 0x400ff592 -> hpf_page_info @ 0x40019c3e
+ok   detour 0x4003ab86 -> hpf_cycle @ 0x40019c80
+ok   detour 0x4003846a -> hpf_get @ 0x400279c4
+ok   detour 0x400378bc -> hpf_delta @ 0x40027a20
+ok   detour 0x400a85f8 -> hpf_text @ 0x40027b00
+ok   detour 0x400a8584 -> flt_glyph @ 0x40027c44
+ok   detour 0x400d2e42 -> flt_graph @ 0x40027ccc
+ok   detour 0x40008492 -> hpf_save @ 0x40019e16
+ok   detour 0x4000826a -> hpf_load @ 0x40019e64
+ok   detour 0x400081f6 -> snd_load @ 0x40019eba
+ok   detour 0x400122d0 -> snd_init @ 0x40019eee
+ok   detour 0x40008364 -> rte_rload @ 0x4002818e
+ok   detour 0x4011f63c -> rte_pushv @ 0x400281aa
+ok   detour 0x4011f660 -> rte_pusha @ 0x400281be
+ok   detour 0x40033a90 -> rte_get_at @ 0x400281d2
+ok   detour 0x40033a1c -> rte_set_at @ 0x400281e8
+ok   detour 0x4003391e -> rte_setrte_at @ 0x40028208
+ok   detour 0x400c52ba -> rte_get_vel @ 0x40028216
+ok   detour 0x400c5246 -> rte_set_vel @ 0x4002822c
+ok   detour 0x400c5148 -> rte_setrte_vel @ 0x4002824c
+ok   detour 0x400a2aae -> hpf_refresh @ 0x40019f02
+ok   detour 0x40007660 -> dac_load @ 0x40019f8c
+ok   detour 0x40007bb0 -> dac_save @ 0x40019fd0
+ok   detour 0x400d901c -> dac_menu_add @ 0x4001a100
+ok   detour 0x400378c2 -> ctrl_all_gate @ 0x40029838
+ok   detour 0x40109b04 -> amp_attack @ 0x400298e4
+ok   displaced <stock> for 0x4009ab72 REIMPLEMENTED in 0002-euclid-accents's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> for 0x400c0e02 REIMPLEMENTED in 0002-euclid-accents's stub, not re-emitted (absent as declared)
+ok   displaced <stock> for 0x400c0e32 REIMPLEMENTED in 0002-euclid-accents's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> re-emitted in 0002-euclid-accents's stub
+ok   displaced <stock> re-emitted in 0003-velocity-humanise's stub
+ok   displaced <stock> re-emitted in 0003-velocity-humanise's stub
+ok   displaced <stock> re-emitted in 0003-velocity-humanise's stub
+ok   displaced <stock> re-emitted in 0003-velocity-humanise's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0004-lfo-rnd's stub
+ok   displaced <stock> re-emitted in 0006-comp-preview's stub
+ok   displaced <stock> re-emitted in 0008-filter-hz's stub
+ok   displaced <stock> re-emitted in 0009-main-rms's stub
+ok   displaced <stock> re-emitted in 0012-slice-loop's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> for 0x400d2e42 REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> for 0x40008364 REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> for 0x4011f63c REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> for 0x4011f660 REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> for 0x4003391e REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> for 0x400c5148 REIMPLEMENTED in 0013-voice-dac's stub, not re-emitted (absent as declared)
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0013-voice-dac's stub
+ok   displaced <stock> re-emitted in 0014-ctrl-all's stub
+ok   displaced <stock> re-emitted in 0015-env-reset-amp's stub
+ok   detour 0x4009ab72 rejoins 0x4009ab8c (declared, not the default 0x4009ab78)
+ok   detour 0x400c3c0e rejoins 0x400c3c16
+ok   detour 0x400c0e02 handles it outright in 0002-euclid-accents's stub, no rejoin declared
+ok   detour 0x400c0e32 handles it outright in 0002-euclid-accents's stub, no rejoin declared
+ok   detour 0x400378a6 rejoins 0x400378ae
+ok   detour 0x400a85e0 rejoins 0x400a85e8
+ok   detour 0x40008f62 rejoins 0x40008f68
+ok   detour 0x40008cc4 rejoins 0x40008cca
+ok   detour 0x4009aaca rejoins 0x4009aad2
+ok   detour 0x4009afa0 rejoins 0x4009afa6
+ok   detour 0x400378ae rejoins 0x400378b6
+ok   detour 0x400a85e8 rejoins 0x400a85f0
+ok   detour 0x400a8f98 rejoins 0x400a8f9e
+ok   detour 0x400ff574 rejoins 0x400ff57a
+ok   detour 0x40038462 rejoins 0x4003846a
+ok   detour 0x400378b6 rejoins 0x400378bc
+ok   detour 0x400a85f0 rejoins 0x400a85f8
+ok   detour 0x400a857c rejoins 0x400a8584
+ok   detour 0x4004aec6 rejoins 0x4004aecc
+ok   detour 0x4003a5f2 rejoins 0x4003a5f8
+ok   detour 0x40039d32 rejoins 0x40039d38
+ok   detour 0x40039d9a rejoins 0x40039da0
+ok   detour 0x400a8dfa rejoins 0x400a8e02
+ok   detour 0x400a9000 rejoins 0x400a9008
+ok   detour 0x4003ab94 rejoins 0x4003ab9c
+ok   detour 0x4009b000 rejoins 0x4009b008
+ok   detour 0x40120fae rejoins 0x40120fb4
+ok   detour 0x401213a0 rejoins 0x401213aa (declared, not the default 0x401213a6)
+ok   detour 0x400a8648 rejoins 0x400a8650
+ok   detour 0x4012135e rejoins 0x40121364
+ok   detour 0x400f9e96 rejoins 0x400f9e9c
+ok   detour 0x401212b6 rejoins 0x401212bc
+ok   detour 0x40121364 rejoins 0x4012136c
+ok   detour 0x4011fde2 rejoins 0x4011fde8
+ok   detour 0x400ff592 handles it outright in 0013-voice-dac's stub, no rejoin declared
+ok   detour 0x4003ab86 rejoins 0x4003ab8c
+ok   detour 0x4003846a rejoins 0x40038472
+ok   detour 0x400378bc rejoins 0x400378c2
+ok   detour 0x400a85f8 rejoins 0x400a8600
+ok   detour 0x400a8584 rejoins 0x400a858c
+ok   detour 0x400d2e42 handles it outright in 0013-voice-dac's stub, no rejoin declared
+ok   detour 0x40008492 rejoins 0x40008498
+ok   detour 0x4000826a rejoins 0x40008270
+ok   detour 0x400081f6 rejoins 0x400081fe
+ok   detour 0x400122d0 rejoins 0x400122d6
+ok   detour 0x40008364 rejoins 0x4000836a
+ok   detour 0x4011f63c rejoins 0x4011f642
+ok   detour 0x4011f660 rejoins 0x4011f666
+ok   detour 0x40033a90 rejoins 0x40033a9e (declared, not the default 0x40033a96)
+ok   detour 0x40033a1c rejoins 0x40033a26
+ok   detour 0x4003391e rejoins 0x40033926
+ok   detour 0x400c52ba rejoins 0x400c52c8 (declared, not the default 0x400c52c0)
+ok   detour 0x400c5246 rejoins 0x400c5250
+ok   detour 0x400c5148 rejoins 0x400c5150
+ok   detour 0x400a2aae rejoins 0x400a2ab6
+ok   detour 0x40007660 rejoins 0x40007666
+ok   detour 0x40007bb0 rejoins 0x40007bb8
+ok   detour 0x400d901c rejoins 0x400d9022
+ok   detour 0x400378c2 rejoins 0x400378c8
+ok   detour 0x40109b04 rejoins 0x40109b0a
+PASS
