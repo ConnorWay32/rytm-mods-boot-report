@@ -51,7 +51,7 @@ Before applying any mods, the build unpacks the stock `.syx` and repacks it unch
 | Null repack SHA-256 | `8ad671087ec30433d5407c7380d2396e0915ab931c5d3dd18a78bf284d3d1e52` |
 | Stock SHA-256 | `8ad671087ec30433d5407c7380d2396e0915ab931c5d3dd18a78bf284d3d1e52` |
 
-The hashes match: the tool rebuilt Elektron's OS 1.73 file byte for byte from its own unpacked contents, including the SysEx encoding and the recompressed MAIN OS. Anyone with the stock file can check the hash against their own download.
+The hashes match: the tool rebuilt Elektron's OS 1.73 file byte for byte. The null repack uses the tool's `-r` mode, which decodes the SysEx transport, parses the container, reassembles it and re-encodes the transport, copying each compressed section verbatim. It therefore shows the transport and container layers round-trip losslessly; it does not recompress any section. Recompression is covered separately by the build verification below: the modified MAIN OS is compressed into the built `.syx` and comes back out byte-identical. Anyone with the stock file can check the hash against their own download.
 
 ### Output
 
