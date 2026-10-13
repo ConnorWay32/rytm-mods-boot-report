@@ -1,6 +1,6 @@
 # Core report: an elemod core on the Analog Rytm MKII (OS 1.73)
 
-This records the hardware runs behind Modwerk step 4, "Core with hooks", for the Analog Rytm MKII. The core is [elekloader](https://github.com/irpina/elekloader)'s Digitakt mk1 core (`core.s`, `settings.s`, `render.s`) built with the Rytm's addresses as `mods/core-ar2`, in [ConnorWay32/elekloader](https://github.com/ConnorWay32/elekloader) (`main`, 33c4837). Only hashes, addresses and photos are here: no firmware, dumps or extracted code.
+This records the hardware runs behind Modwerk step 4, "Core with hooks", for the Analog Rytm MKII. The core is [elekloader](https://github.com/irpina/elekloader)'s Digitakt mk1 core (`core.s`, `settings.s`, `render.s`) built with the Rytm's addresses as `mods/core-ar2`, in [Iced-Cream/elekloader](https://github.com/Iced-Cream/elekloader) (`main`, 33c4837). Only hashes, addresses and photos are here: no firmware, dumps or extracted code.
 
 ## 1. What was built
 
@@ -65,7 +65,7 @@ The unit acted on every key and encoder as stock does. The same held through a s
 
 ## 4. Earlier test images
 
-Before the core existed, two test images from [rytm-mods-src](https://github.com/ConnorWay32/rytm-mods-src)'s `elemod` branch checked the same ground:
+Before the core existed, two test images from [rytm-mods-src](https://github.com/Iced-Cream/rytm-mods-src)'s `elemod` branch checked the same ground:
 
 - **The mods' area** (mod 0016): `0x47BE0000`-`0x47C00000` filled with an address-dependent pattern from the boot site at power-on; no word changed through playback, sampling, effects, MIDI, Overbridge and a power cycle.
 - **The render sites** (mod 0017): a flag armed from `0x4011FB02` and the effect returns cleared from `0x40121656` on alternate 0.7 s stretches. The delay and the reverb pulsed, each on its own setting, with the reverb return PRE or POST.

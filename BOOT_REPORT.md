@@ -1,6 +1,6 @@
 # Boot report: modified OS 1.73 on the Analog Rytm MKII
 
-This report records one build of [rytm-mods-src](https://github.com/ConnorWay32/rytm-mods-src): Elektron's stock OS 1.73 file rebuilt byte for byte, then a modified build flashed to a real Analog Rytm MKII, booted, and recovered with the stock OS. It provides evidence for steps 2, "Stock file rebuilt exactly", and 3, "Modified OS boots", of Modwerk's [Add a machine](https://github.com/repeat98/modwerk/blob/main/docs/ADD_A_MACHINE.md) process, on OS 1.73.
+This report records one build of [rytm-mods-src](https://github.com/Iced-Cream/rytm-mods-src): Elektron's stock OS 1.73 file rebuilt byte for byte, then a modified build flashed to a real Analog Rytm MKII, booted, and recovered with the stock OS. It provides evidence for steps 2, "Stock file rebuilt exactly", and 3, "Modified OS boots", of Modwerk's [Add a machine](https://github.com/repeat98/modwerk/blob/main/docs/ADD_A_MACHINE.md) process, on OS 1.73.
 
 No firmware is included in this repository: not the stock OS, the built `.syx`, any extracted section, or any disassembly. Only hashes, sizes, addresses and observations are recorded.
 
@@ -12,7 +12,7 @@ The mods are MrScruff's work, redistributed with permission in rytm-mods-src.
 
 | | |
 |---|---|
-| Source repository | https://github.com/ConnorWay32/rytm-mods-src |
+| Source repository | https://github.com/Iced-Cream/rytm-mods-src |
 | Source commit | `cf5ac0062b2465d080070a39f257cc9c62f4604b` (the repository's initial commit) |
 | Build command | `make verify` (default mod set) |
 | Built on | 2026-10-10 |
